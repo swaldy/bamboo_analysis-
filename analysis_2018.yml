@@ -1,0 +1,107 @@
+tree: Events
+eras:
+  "2018":
+    luminosity: 59700 # pb^-1 
+#dbcache: dascache
+samples:
+  # Signal MC
+  bbWW_sl:
+    era: "2018"
+    group: "HH_bbWW"
+    db: das:/GluGluToHHTo2B2VLNu2J_node_cHHH1_TuneCP5_PSWeights_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM 
+    type: mc
+    cross-section:  0.00334825583
+    generated-events: genEventSumw
+    split: -1
+  
+  bbWW_dl:
+    era: "2018"
+    group: "HH_bbWW"
+    db: das:/GluGluToHHTo2B2VTo2L2Nu_node_cHHH1_TuneCP5_PSWeights_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM
+    type: mc
+    cross-section: 0.000777396389
+    generated-events: genEventSumw
+    split: -1
+
+  bbtautau:
+    era: "2018"
+    group: "HH_bbtautau"
+    db: das:/GluGluToHHTo2B2Tau_node_cHHH1_TuneCP5_PSWeights_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM 
+    type: mc
+    cross-section: 0.0022695357
+    generated-events: genEventSumw
+    split: -1
+
+
+  # bkg #
+  TTbar_sl:
+    era: "2018"
+    group: "TTbar"
+    db: [das:/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM, das:/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext3-v1/NANOAODSIM]  # Number of events: 100790000, Number of events: 199829998
+    type: mc
+    cross-section: 366
+    generated-events: genEventSumw
+    split: -1
+
+  TTbar_dl:
+    era: "2018"
+    group: "TTbar"
+    db: das:/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM  # Number of events: 64310000
+    type: mc
+    cross-section: 88.4
+    generated-events: genEventSumw
+    split: -1
+
+# Plotting configuration parameters ====================================================
+
+plotIt:
+  configuration:
+    width: 800
+    height: 600
+    margin-left: 0.2
+    margin-right: 0.03
+    margin-top: 0.05
+    margin-bottom: 0.15
+    luminosity-label: '%1$.2f fb^{-1} (13.6 TeV)'
+    experiment: CMS
+    extra-label: Run 2 (2018) - Work in progress
+    error-fill-style: 3154
+    error-fill-color: "#ee556270"
+    ratio-fit-error-fill-style: 1001
+    ratio-fit-error-fill-color: "#aa556270"
+    ratio-fit-line-color: "#0B486B"
+    yields-table-align: v
+  legend:
+    position: [0.7, 0.6, 0.91, 0.91]
+  groups:
+    data:
+      legend: data
+    HH_bbWW:
+      legend: HH_bbWW
+      fill-color: "#EDC951"
+    HH_bbtautau:
+      legend: HH_bbtautau
+      fill-color: "#EDC951"
+    TTbar:
+      legend: TTbar
+      fill-color: "#99ccff"
+    DY:
+      legend: DY
+      fill-color: "#9FFF33"
+    WJets:
+      legend: WJets
+      fill-color: "#FFC300"
+    VV:
+      legend: VV
+      fill-color: "#C900FF"
+  plotdefaults:
+    y-axis: Events
+    # log-y: both
+    y-axis-show-zero: True
+    save-extensions: [pdf]
+    show-ratio: True
+    sort-by-yields: True
+    legend-columns: 2
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range: [0.8, 1.2]
+    normalized: False
