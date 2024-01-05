@@ -6,7 +6,7 @@ samples:
   DY_M50_test:
     era: '2016'
     type: mc
-    files: [ ../tests/data/DY_M50_2016.root ]
+    files: [ DY_M50_2016.root ]
     generated-events: genEventSumw
     cross-section: 1
     legend: DY
